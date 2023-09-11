@@ -1,25 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import {useEffect} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <strong>Gino Romanello</strong>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    useEffect(() => {
+    const timeout = setTimeout(() => {
+      // 👇️ redirects to an external URL
+      window.location.replace('https://www.linkedin.com/in/romangino');
+    }, 1000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  return <>Redirecting to LinkedIn...</>;
 }
 
-export default App;
+export default App
